@@ -21,7 +21,7 @@ namespace DotNetWebAPI.Controllers
             return "value";
         }
 
-        // POST api/values '" ""
+        // POST api/values 
         public void Post([FromBody] string value)
         {
         }
