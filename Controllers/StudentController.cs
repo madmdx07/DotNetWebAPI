@@ -62,28 +62,28 @@ namespace DotNetWebAPI.Controllers
         }
 
         // POST: Student/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(StudentViewModel imodel)
-        {
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri("https://localhost:44378/api/StudentApi");
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create(StudentViewModel imodel)
+        //{
+        //    using (var client = new HttpClient())
+        //    {
+        //        client.BaseAddress = new Uri("https://localhost:44378/api/StudentApi");
 
-                //HTTP POST
-                var postTask = client.PostAsJsonAsync<StudentViewModel>("StudentApi", imodel);
-                postTask.Wait();
+        //        //HTTP POST
+        //        var postTask = client.PostAsJsonAsync<StudentViewModel>("StudentApi", imodel);
+        //        postTask.Wait();
 
-                var result = postTask.Result;
-                if (result.IsSuccessStatusCode)
-                {
-                    return RedirectToAction("Index");
-                }
-            }
+        //        var result = postTask.Result;
+        //        if (result.IsSuccessStatusCode)
+        //        {
+        //            return RedirectToAction("Index");
+        //        }
+        //    }
 
-            ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
+        //    ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
 
-            return View(imodel);
-        }
+        //    return View(imodel);
+        //}
     }
 }
